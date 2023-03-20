@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=640,minimum-scale=0.5,maximum-scale=1.0,user-scalable=no, initial-scale=1.0" />
+    <title>Electrical Vehicle Interactable Graph</title>
+    <script>
+
+        // 车头的js 
+
+        // 电子电器的鼠标悬停与离开
+        function showTip(){
+            document.getElementById('alertDialog').style.display = 'none';
+        }
+        function hideTip(){
+            document.getElementById('alertDialog').style.display = 'block';
+        }
+
+        // 智能座舱的鼠标悬停与离开
+        function showCockpit(){
+            document.getElementById('cockpit').style.display = 'none';
+        }
+        function hideCockpit(){
+            document.getElementById('cockpit').style.display = 'block';
+        }
+
+        // 智能驾驶的鼠标悬停与离开
+        function showDriving(){
+            document.getElementById('driving').style.display = 'none';
+        }
+        function hideDriving(){
+            document.getElementById('driving').style.display = 'block';
+        }
+
+        /* 电控的鼠标悬停与离开 */
+        function showElectric(){
+            document.getElementById('electric').style.display = 'none';
+        }
+        function hideElectric(){
+            document.getElementById('electric').style.display = 'block';
+        }
+
+        // 电驱动的鼠标悬停与离开
+        function showDrive(){
+            document.getElementById('drive').style.display = 'none';
+        }
+        function hideDrive(){
+            document.getElementById('drive').style.display = 'block';
+        }
+
+
+        // 车的侧身js   事件
+        // 智能网联的鼠标悬停与离开
+        function showNetworkingt(){
+            document.getElementById('networking').style.display = 'none';
+        }
+        function hideNetworkingt(){
+            document.getElementById('networking').style.display = 'block';
+        }
+
+        // 车身的鼠标悬停与离开
+        function showDodywork(){
+            document.getElementById('bodywork').style.display = 'none';
+        }
+        function hideDodywork(){
+            document.getElementById('bodywork').style.display = 'block';
+        }
+
+        // 内外饰的鼠标悬停与离开
+        function showTrim(){
+            document.getElementById('Trim').style.display = 'none';
+        }
+        function hideTrim(){
+            document.getElementById('Trim').style.display = 'block';
+        }
+        // Chassis
+
+        function showChassis(){
+            document.getElementById('Chassis').style.display = 'none';
+        }
+        function hideChassis(){
+            document.getElementById('Chassis').style.display = 'block';
+        }
+
+
+        // 动力电池 Battery
+
+        function showBattery(){
+            document.getElementById('Battery').style.display = 'none';
+        }
+        function hideBattery(){
+            document.getElementById('Battery').style.display = 'block';
+        }
+
+        // 热管理系统 Hot
+        function showHot(){
+            document.getElementById('Hot').style.display = 'none';
+        }
+        function hideHot(){
+            document.getElementById('Hot').style.display = 'block';
+        }
+        // 点击按钮 求换车身
+        var num = 2
+        function onBtn() {
+            num++
+            console.log(num);
+            if(num%2==0){
+                document.getElementById('imageOne').style.display = 'none';
+                document.getElementById('imageTow').style.display = 'block';
+            }else{
+                document.getElementById('imageOne').style.display = 'block';
+                document.getElementById('imageTow').style.display = 'none';
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    
+    <div class="box">
+        <div class="first">
+            <div style="text-align: center;">Electrical Vehicle Structure:</div>
+            <div>More than 1000 components, With more than 200 suppliers</div>
+            <div class="last"></div>
+        </div>
+        <div class="tow">
+            <button onclick="onBtn()" style="background-color: bisque;border-radius: 20px;height: 40px;width: 100px;margin-bottom: 40px;">Change view</button>
+        </div>
+        <div>
+        <div id="imageOne" style="display: none;background-image: url('./images/car1.jpg');background-repeat:no-repeat;background-size:cover;width: 100%;height: 500px;z-index: 999;">
+            <div class="showalertDialog" onmouseout="showTip()" onmouseover="hideTip()"></div>
+            <div id="alertDialog" style="display: none;">Electrical and electronic: <br><br>Tesla: 1 <br> NIO: 3</div>
+
+            <div class="cockpit" onmouseout="showCockpit()" onmouseover="hideCockpit()"></div>
+            <div id="cockpit" style="display: none;">Intelligent cockpit: <br><br>Tesla: NaN <br> NIO: 7</div>
+
+            <div class="driving" onmouseout="showDriving()" onmouseover="hideDriving()"></div>
+            <div id="driving" style="display: none;">Intelligent driving: <br><br>Tesla: 243 <br> NIO: 140</div>
+
+            <div class="electric" onmouseout="showElectric()" onmouseover="hideElectric()"></div>
+            <div id="electric" style="display: none;">Electronic control: <br><br>Tesla: 112 <br> NIO: 37</div>
+
+            <div class="drive" onmouseout="showDrive()" onmouseover="hideDrive()"></div>
+            <div id="drive" style="display: none;">Electric drive: <br><br>Tesla: 45 <br> NIO: 9</div>
+        </div>
+        <div id="imageTow" style="display: block;background-image: url('./images/car2.jpg');background-repeat:no-repeat;background-size:cover;width: 100%;height: 500px;z-index: 999;">
+            <div class="networking" onmouseout="showNetworkingt()" onmouseover="hideNetworkingt()"></div>
+            <div id="networking" style="display: none;">Body: <br><br>Tesla: 251 <br> NIO: 86</div>
+            
+            <div class="bodywork" onmouseout="showDodywork()" onmouseover="hideDodywork()"></div>
+            <div id="bodywork" style="display: none;">Intellignet network connection: <br><br>Tesla: NaN <br> NIO: 4</div>
+
+            <div class="Trim" onmouseout="showTrim()" onmouseover="hideTrim()"></div>
+            <div id="Trim" style="display: none;">Interior and exterior decoration: <br><br>Tesla: NaN <br> NIO: 8</div>
+            
+            <div class="Chassis" onmouseout="showChassis()" onmouseover="hideChassis()"></div>
+            <div id="Chassis" style="display:none;">Chassis: <br><br>Tesla: 178 <br> NIO: 124</div>
+
+            <div class="Battery" onmouseout="showBattery()" onmouseover="hideBattery()"></div>
+            <div id="Battery" style="display:none;">Power battery: <br><br>Tesla: 407 <br> NIO: 130 </div>
+
+            <div class="Hot" onmouseout="showHot()" onmouseover="hideHot()"></div>
+            <div id="Hot" style="display:none;">Thermal managment system: <br><br>Tesla: 35 <br> NIO: 22</div>
+        </div>
+        </div>
+        <div style="width: 100%; text-align: left;margin:20px 0 50px 80px">
+            <div>Signature work: Xinyue JI; Supervised by Prof. Jingbo CUI</div>
+            <div>Duke Kunshan University</div>
+        </div>
+    </div>
+    <style>
+        /* 侧身样式 */
+
+         /* 热管理系统的弹窗样式 */
+         #Hot {
+			/* 对话框：一个圆角矩形和一个小三角形 */
+            left: 820px;
+            top: -200px;
+			width: 150px;
+			height: 100px;
+			background: #f7f7f7;
+			border-radius: 10px;
+			position: relative;
+		}
+		#Hot:before {
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+		        left: -20px;
+		        top: 40px;
+			border-top: 10px solid transparent;
+		        border-bottom: 10px solid transparent;
+		        border-right: 20px solid #f7f7f7;	
+        }
+        .Hot {
+            left: 720px;
+            top: 0px; 
+			width: 70px;
+			height: 40px;
+			position: relative;
+            /* background-color: blue; */
+        }
+        
+        /* 动力电池的弹窗样式 */
+        #Battery {
+			/* 对话框：一个圆角矩形和一个小三角形 */
+            left: 580px;
+            top: 100px;
+			width: 150px;
+			height: 100px;
+			background: #f7f7f7;
+			border-radius: 10px;
+			position: relative;
+		}
+		#Battery:before {
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+		        left: -20px;
+		        top: 40px;
+			border-top: 10px solid transparent;
+		        border-bottom: 10px solid transparent;
+		        border-right: 20px solid #f7f7f7;	
+        }
+        .Battery {
+            left: 440px;
+            top: 140px; 
+			width: 80px;
+			height: 20px;
+			position: relative;
+            /* background-color: blue; */
+        }
+
+
+        /* 内外饰的弹窗样式 */
+        #Chassis {
+			/* 对话框：一个圆角矩形和一个小三角形 */
+            left: 480px;
+            top: 100px;
+			width: 150px;
+			height: 100px;
+			background: #f7f7f7;
+			border-radius: 10px;
+			position: relative;
+		}
+		#Chassis:before {
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+		        left: -20px;
+		        top: 40px;
+			border-top: 10px solid transparent;
+		        border-bottom: 10px solid transparent;
+		        border-right: 20px solid #f7f7f7;	
+        }
+        .Chassis {
+            left: 260px;
+            top: 160px; 
+			width: 160px;
+			height: 20px;
+			position: relative;
+            /* background-color: blue; */
+        }
+
+        /* 内外饰的弹窗样式 */
+        #Trim {
+			/* 对话框：一个圆角矩形和一个小三角形 */
+            left: 580px;
+            top: -50px;
+			width: 150px;
+			height: 100px;
+			background: #f7f7f7;
+			border-radius: 10px;
+			position: relative;
+		}
+		#Trim:before {
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+		        left: -20px;
+		        top: 40px;
+			border-top: 10px solid transparent;
+		        border-bottom: 10px solid transparent;
+		        border-right: 20px solid #f7f7f7;	
+        }
+        .Trim {
+            left: 410px;
+            top: 130px; 
+			width: 65px;
+			height: 130px;
+			position: relative;
+            /* background-color: blue; */
+        }
+
+        /* 智能网联的弹窗样式 */
+        #networking {
+			/* 对话框：一个圆角矩形和一个小三角形 */
+            left: 580px;
+            top: 20px;
+			width: 150px;
+			height: 100px;
+			background: #f7f7f7;
+			border-radius: 10px;
+			position: relative;
+		}
+		#networking:before {
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+		        left: -20px;
+		        top: 40px;
+			border-top: 10px solid transparent;
+		        border-bottom: 10px solid transparent;
+		        border-right: 20px solid #f7f7f7;	
+        }
+        .networking {
+            left: 400px;
+            top: 100px; 
+			width: 105px;
+			height: 20px;
+			position: relative;
+            /* background-color: blue; */
+        }
+       /* 车身的弹窗样式 */
+
+       #bodywork {
+			/* 对话框：一个圆角矩形和一个小三角形 */
+            left: 80px;
+            top: 20px;
+			width: 150px;
+			height: 100px;
+			background: #f7f7f7;
+			border-radius: 10px;
+			position: relative;
+		}
+		#bodywork:before {
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+		        right: -20px;
+		        top: 40px;
+			border-top: 10px solid transparent;
+		        border-bottom: 10px solid transparent;
+		        border-left: 20px solid #f7f7f7;	
+        }
+        .bodywork {
+            left: 280px;
+            top: 80px; 
+			width: 105px;
+			height: 20px;
+			position: relative;
+            /* background-color: blue; */
+        }
+
+
+        /* 车前头样式 */
+
+
+         /* 电驱动的弹窗样式 */
+         #drive {
+			/* 对话框：一个圆角矩形和一个小三角形 */
+            left: 580px;
+            top: 100px;
+			width: 150px;
+			height: 100px;
+			background: #f7f7f7;
+			border-radius: 10px;
+			position: relative;
+		}
+		#drive:before {
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+		        left: -20px;
+		        top: 40px;
+			border-top: 10px solid transparent;
+		        border-bottom: 10px solid transparent;
+		        border-right: 20px solid #f7f7f7;	
+        }
+        .drive {
+            left: 460px;
+            top: 140px; 
+			width: 55px;
+			height: 40px;
+			position: relative;
+            /* background-color: blue; */
+        }
+
+
+        /* 电控的弹窗样式 */
+        #electric {
+			/* 对话框：一个圆角矩形和一个小三角形 */
+            left: 850px;
+            top: -80px;
+			width: 150px;
+			height: 100px;
+			background: #f7f7f7;
+			border-radius: 10px;
+			position: relative;
+		}
+		#electric:before {
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+		        left: -20px;
+		        top: 40px;
+			border-top: 10px solid transparent;
+		        border-bottom: 10px solid transparent;
+		        border-right: 20px solid #f7f7f7;	
+        }
+        .electric { 
+            left: 750px;
+            top: 30px; 
+			width: 55px;
+			height: 40px;
+			position: relative;
+            /* background-color: blue; */
+        }
+        /* 智能驾驶的弹窗样式 */
+        #driving {
+			/* 对话框：一个圆角矩形和一个小三角形 */
+            left: 650px;
+            top: -100px;
+			width: 150px;
+			height: 100px;
+			background: #f7f7f7;
+			border-radius: 10px;
+			position: relative;
+		}
+		#driving:before {
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+		        left: -20px;
+		        top: 40px;
+			border-top: 10px solid transparent;
+		        border-bottom: 10px solid transparent;
+		        border-right: 20px solid #f7f7f7;	
+        }
+        .driving { 
+            left: 490px;
+            top: -10px; 
+			width: 65px;
+			height: 30px;
+			position: relative;
+            /* background-color: blue; */
+        }
+        /* 智能座舱的弹窗样式 */
+        #cockpit {
+			/* 对话框：一个圆角矩形和一个小三角形 */
+            left: 250px;
+            top: -80px;
+			width: 150px;
+			height: 100px;
+			background: #f7f7f7;
+			border-radius: 10px;
+			position: relative;
+		}
+		#cockpit:before {
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+		        right: -20px;
+		        top: 40px;
+			border-top: 10px solid transparent;
+		        border-bottom: 10px solid transparent;
+		        border-left: 20px solid #f7f7f7;	
+        }
+        .cockpit { 
+            left: 470px;
+            top: 70px; 
+			width: 65px;
+			height: 30px;
+			position: relative;
+            /* background-color: blue; */
+        }
+        /* 电子电器的弹窗样式 */
+        #alertDialog {
+			/* 对话框：一个圆角矩形和一个小三角形 */
+            left: 250px;
+            top: 120px;
+			width: 150px;
+			height: 100px;
+			background: #f7f7f7;
+			border-radius: 10px;
+			position: relative;
+		}
+		#alertDialog:before {
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+		        left: -20px;
+		        top: 40px;
+			border-top: 10px solid transparent;
+		        border-bottom: 10px solid transparent;
+		        border-right: 20px solid #f7f7f7;	
+        }
+        .showalertDialog {
+            left: 150px;
+            top: 200px; 
+			width: 35px;
+			height: 60px;
+			position: relative;
+            /* background-color: blue; */
+        }
+        /* 清楚默认样式 */
+        * {
+        padding: 0;
+        margin: 0;
+        }
+        body{
+            z-index: 1;
+            background-color: #f0eff4;
+            display: flex;
+            flex-direction:column-reserve;
+            justify-content: center;
+        }
+        .box {
+            text-align: center;
+            width: 65%;
+            height:  100%;
+            background-color: #ffffff;
+        }
+        .box .first{
+            font-size: 35px;
+            margin-top: 20px;
+            font-weight:bold;
+        }
+        .first .last {
+            margin-left: 5%;
+            width: 90%;
+            margin-top: 10px;
+            margin-bottom: 50px;
+            border-bottom: 2px solid #782d41;
+        }
+        .box .tow {
+            width: 100%;
+            display: flex;
+            justify-content:center;
+        }
+    </style>
+</body>
+</html>
